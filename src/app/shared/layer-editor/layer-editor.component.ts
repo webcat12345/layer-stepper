@@ -44,7 +44,9 @@ export class LayerEditorComponent implements OnInit {
 
   private emitLayerChangeEvent() {
     if (this.form.value && this.form.value.layers) {
-      this.layers = this.form.controls.layers.controls.map((item) => ({ title: item.controls.title.value }));
+      this.layers = this.form.controls.layers.controls
+        .filter((item) => item.valid)
+        .map((item) => ({ title: item.controls.title.value }));
     }
 
     this.layerChanged.emit(this.layers);
