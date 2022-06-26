@@ -13,6 +13,7 @@
     </div>
   </div>
 
+  <p class="text-center text-13" *ngIf="!layers.length">No layers available.</p>
   <div class="text-13 px-10 py-5 bg-red-500 rounded text-white mt-20 shadow shadow-red-300" *ngIf="layers.length > 6">
     <b>WARNING</b>: Too many layers. There are too many layers to be rendered. We are rendering only <b>6</b> layers at
     the moment.

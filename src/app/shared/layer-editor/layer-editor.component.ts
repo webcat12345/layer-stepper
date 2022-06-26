@@ -37,6 +37,11 @@ export class LayerEditorComponent implements OnInit {
     this.emitLayerChangeEvent();
   }
 
+  deleteLayer(index: number) {
+    this.form.controls.layers.removeAt(index);
+    this.emitLayerChangeEvent();
+  }
+
   private emitLayerChangeEvent() {
     if (this.form.value && this.form.value.layers) {
       this.layers = this.form.controls.layers.controls.map((item) => ({ title: item.controls.title.value }));
