@@ -13,4 +13,9 @@ export class PreviewComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectLayer(index: number) {
+    this.layers.forEach((layer) => (layer.selected = false));
+    this.layers[index].selected = true;
+  }
 }
